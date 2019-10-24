@@ -1,6 +1,6 @@
-$("body").append("<img src='https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg' />"); 
-
-imgList =  ["imglink", "https://cdn-prod.medicalnewstoday.com/content/images/articles/274/274620/two-peaches.jpg", ]; 
+//$("body").append("<img src='https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg' />"); 
+$("body").html("processing...")
+imgList =  ["https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg", "https://cdn-prod.medicalnewstoday.com/content/images/articles/274/274620/two-peaches.jpg", ]; 
 
 
 var settings = {
@@ -26,16 +26,29 @@ var settings = {
 // testa för bild 
 // visa upp resultat i html
 
-$.ajax(settings).done(function (response) {
-    console.log(response);
-    console.log(response.score);
- 
-    if (response.score > 30) {
-        $("body").append("<span> Nude! </span>"); 
-    } else {
-        $("body").append("<span> Not Nude! </span>"); 
-    }
+$(imgList).each(function(idx, img) {
+    console.log("processing img: " + idx);
+    var imglink = img;
+    console.log("the image: " + img);
+   
 
+
+    settings.objecturl = imglink;
+    $("body").html(""); 
+    $.ajax(settings).done(function (response) {
+        $("body").append("<img src='"+imglink+"'/>"); 
+        console.log(response);
+        console.log(response.score);
+     
+        if (response.score > 30) {
+            $("body").append("<span> Nude! </span>"); 
+        } else {
+            $("body").append("<span> Not Nude! </span>"); 
+        }
+    
+    });
+    // and the rest of your code
 });
+
 
 
