@@ -1,6 +1,6 @@
 //$("body").append("<img src='https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg' />"); 
 $("body").html("processing...")
-imgList =  ["https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg", "https://cdn-prod.medicalnewstoday.com/content/images/articles/274/274620/two-peaches.jpg", ]; 
+imgList =  ["https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg", "https://cdn-prod.medicalnewstoday.com/content/images/articles/274/274620/two-peaches.jpg", "http://www.multiart.nu/naken/indexbilder/naken_i_naturen_vinjett.gif"]; 
 
 
 var settings = {
