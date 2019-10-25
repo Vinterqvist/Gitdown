@@ -1,7 +1,6 @@
 //$("body").append("<img src='https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg' />"); 
 $("body").html("processing...")
-imgList = ["https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg", "https://cdn-prod.medicalnewstoday.com/content/images/articles/274/274620/two-peaches.jpg", "http://www.multiart.nu/naken/indexbilder/naken_i_naturen_vinjett.gif"];
-
+imgList =  ["https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg", "https://www.studiointernational.com/images/articles/a/atkins-ed-2014/atkins-film-still-2.jpg", "https://taidehalli.fi/wp-content/uploads/2018/11/Hak108_web-Hilma-af-Klint.jpg", "https://userscontent2.emaze.com/images/c56100dc-ee8e-4146-875c-d8c5e7e71816/1ed31791ad6ff33578c65a0f1cd3e2c5.jpg", "https://www.louvre.fr/sites/default/files/imagecache/940x768/medias/medias_images/images/louvre-le-28-juillet-la-liberte-guidant-le-peuple-28-juillet-1830.jpg", "https://cdn-prod.medicalnewstoday.com/content/images/articles/274/274620/two-peaches.jpg", "https://www.tate.org.uk/sites/default/files/styles/width-420/public/images/louise_bourgeois_fillette.jpg", "http://www.multiart.nu/naken/indexbilder/naken_i_naturen_vinjett.gif"]; 
 
 var settings = {
     "async": true,
