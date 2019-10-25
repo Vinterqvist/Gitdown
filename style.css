@@ -1,0 +1,24 @@
+.grey-box {
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 10px;
+    padding-bottom: 20px;
+    width:400px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    display:table;
+    margin:0 auto;
+}
+
+img {
+    padding-bottom: 15px;
+    width:400px;
+}
+
+
+
+
