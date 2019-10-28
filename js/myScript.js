@@ -28,8 +28,8 @@ var settings = {
         "objecturl": "https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg"
     }
 }
-index = 0; 
-
+index = 0;
+var stopimg = "./img/stop.jpg"
 // loopa listan av alla bilder
 // för alla bilder settings.objecturl = imgList[index];
 // lägga in aktuell bild
@@ -38,13 +38,12 @@ index = 0;
 
 setInterval(function() {
 
- 
+
     var imglink = imgList[index];
-    console.log(imglink); 
-    var img = imglink; 
+    console.log(imglink);
+    var img = imglink;
 
 
-    
 
     var settings = {
         "async": true,
@@ -66,13 +65,13 @@ setInterval(function() {
         // add image to page
         $("body").fadeIn( 1000, "linear");
         $("body").empty();
-        
+
         $("body").append("<div class='grey-box'>");
         element = $(".grey-box");
-        console.log(element); 
+        console.log(element);
         $("body").hide();
-        $("body").html("<img src='" + imglink + "'/>");
-        console.log(element); 
+
+        console.log(element);
         console.log(response);
         console.log(response.score);
         console.log(response.suspect);
@@ -80,17 +79,27 @@ setInterval(function() {
 
 
         if (response.score > 30) {
-            $("body").append("<br/><span> Nude! </span>").hide();
+
+            element.append("<span class=theimage'><img src='" + stopimg + "'/></span>")
+          
+            element.append("<br/><span> Nude! </span>")
+            $("body").show();
         } else {
-            $("body").append("<br/><span> Not Nude! </span>").hide();
+            element.html("<img src='" + imglink + "'/>");
+            element.append("<br/><span> Not Nude! </span>")
+            $("span").css({opacity:1});
+            $("body").show();
             $("body").fadeIn( 1000, "linear");
         }
-        
- 
- 
-    
+
+
+
+
 
     });
-    index = index + 1; 
+    index = index + 1;
+    if(index > imgList.length-1) {
+      index = 0;
+    }
     // and the rest of your code
 }, 4000);
