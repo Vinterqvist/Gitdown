@@ -28,7 +28,7 @@ var settings = {
         "objecturl": "https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg"
     }
 }
-
+index = 0; 
 
 // loopa listan av alla bilder
 // för alla bilder settings.objecturl = imgList[index];
@@ -36,17 +36,16 @@ var settings = {
 // testa för bild
 // visa upp resultat i html
 
-$(imgList).each(function (idx, img) {
+setInterval(function() {
 
-    console.log("processing img: " + idx);
-    var imglink = img;
-    console.log("the image: " + img);
-    // set the current img to settings
+ 
+    var imglink = imgList[index];
+    console.log(imglink); 
+    var img = imglink; 
 
-    console.log("the image: " + img);
 
-    $("body").html("");
-    console.log(settings)
+    
+
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -65,10 +64,15 @@ $(imgList).each(function (idx, img) {
 
     $.ajax(settings).done(function (response) {
         // add image to page
-        $("body").append("<div id='div" + idx + "' class='grey-box'>");
-
-        $("#div" + idx).append("<img src='" + imglink + "'/>");
-
+        $("body").fadeIn( 1000, "linear");
+        $("body").empty();
+        
+        $("body").append("<div class='grey-box'>");
+        element = $(".grey-box");
+        console.log(element); 
+        $("body").hide();
+        $("body").html("<img src='" + imglink + "'/>");
+        console.log(element); 
         console.log(response);
         console.log(response.score);
         console.log(response.suspect);
@@ -76,11 +80,17 @@ $(imgList).each(function (idx, img) {
 
 
         if (response.score > 30) {
-            $("#div" + idx).append("<br/><span> Nude! </span>");
+            $("body").append("<br/><span> Nude! </span>").hide();
         } else {
-            $("#div" + idx).append("<br/><span> Not Nude! </span>");
+            $("body").append("<br/><span> Not Nude! </span>").hide();
+            $("body").fadeIn( 1000, "linear");
         }
+        
+ 
+ 
+    
 
     });
+    index = index + 1; 
     // and the rest of your code
-});
+}, 4000);
