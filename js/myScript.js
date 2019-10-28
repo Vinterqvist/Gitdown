@@ -1,4 +1,4 @@
-//$("body").append("<img src='https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg' />"); 
+//$("body").append("<img src='https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg' />");
 $("body").html("processing...")
 imgList =  [    "https://i.pinimg.com/originals/a7/a4/8c/a7a48c091299b55edf76ee6586f90d4e.jpg", 
                 "https://pbs.twimg.com/media/B9r3mUmIgAAWDNL.jpg:large", 
@@ -30,10 +30,10 @@ var settings = {
 }
 
 
-// loopa listan av alla bilder 
+// loopa listan av alla bilder
 // för alla bilder settings.objecturl = imgList[index];
 // lägga in aktuell bild
-// testa för bild 
+// testa för bild
 // visa upp resultat i html
 
 $(imgList).each(function (idx, img) {
@@ -59,6 +59,3 @@ $(imgList).each(function (idx, img) {
     });
     // and the rest of your code
 });
-
-
-
