@@ -77,11 +77,12 @@ setInterval(function() {
         console.log(response.suspect);
         console.log(response.classification);
 
-
+        //$("body").css("background-color", getRandomColor());
         if (response.score > 30) {
 
             element.append("<span class=theimage'><img src='" + stopimg + "'/></span>")
-          
+
+
             element.append("<br/><span> Nude! </span>")
             $("body").show();
         } else {
@@ -103,3 +104,12 @@ setInterval(function() {
     }
     // and the rest of your code
 }, 4000);
+
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
